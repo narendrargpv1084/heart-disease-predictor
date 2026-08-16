@@ -3,7 +3,7 @@ import numpy as np
 import joblib
 
 # Load model and scaler
-model = joblib.load("svc_model.pkl)
+model = joblib.load("svc_model.pkl")
 
 st.set_page_config(page_title="Heart Disease Predictor", layout="centered")
 
