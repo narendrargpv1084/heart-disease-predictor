@@ -4,6 +4,7 @@ import joblib
 
 # Load model and scaler
 model = joblib.load("svc_model.pkl")
+scaler = joblib.load("scaler.pkl")
 
 st.set_page_config(page_title="Heart Disease Predictor", layout="centered")
 
@@ -31,6 +32,7 @@ if st.button("Predict"):
     input_data = np.array([[age, sex, cp, trestbps, chol, fbs,
                             restecg, thalach, exang, oldpeak,
                             slope, ca, thal]])
+    input_data = scaler.transform(input_data)
 
     prediction = model.predict(input_data)
 
